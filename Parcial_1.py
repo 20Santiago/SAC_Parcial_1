@@ -28,3 +28,18 @@ else:
     print("La matriz ingresada es:")
     for fila in matriz:
         print(fila)
+
+# Se calcula la matriz transpuesta
+    matriz_transpuesta = []
+    for j in range(columnas):
+        fila_transpuesta = []
+        for i in range(filas):
+            fila_transpuesta.append(matriz[i][j])
+        matriz_transpuesta.append(fila_transpuesta)
+
+# Se muestra la matriz transpuesta
+    print("La matriz transpuesta es:")
+    for fila in matriz_transpuesta:
+        print(fila)
+
+   
