@@ -90,4 +90,14 @@ else:
         for fila in inversa:
             print(fila)
 
-   
+
+
+## Ejercicio:
+
+# Una fábrica de muebles fabrica 2 modelos de estanterias A y B, cada uno en dos tamaños grande y pequeño.
+# Produce diariamente 100 estanterias grande y 800 estanterias pequeñas del tipo A, y 700 grandes y 200 pequeñas
+# del tipo B. Con la información anterior, interprete la matriz, halle su transpuesta y calcule la inversa de la matriz.
+
+# Utilice para su solución, el programa anterior.
+
+ 
