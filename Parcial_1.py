@@ -1,64 +1,30 @@
 # Primer parcial
 # Santiago Aguilar Cardenas
 
-#Comenzamos creando la matriz de dimensión n*n
+#Comenzamos dandole dimensiones a la matriz dada por el usuario
+filas = int(input("Ingrese el número de filas: "))
+columnas = int(input("Ingrese el número de columnas: "))
 
-class Matriz:
-  def __init__(self, valores):
-    self.valores = valores
-    n = len(valores)
-    m = len(valores[0])
-    self.shape = [n, m]
+#Creamos una condición para que el usuario sepa que debe ser una matriz cuadrada
+if filas != columnas:
+    print("Lo sentimos, su matriz no es cuadrada. Este programa está prediseñado para matrices cuadradas.")
 
-  def __str__(self):
-    if self.shape[0] == 1:
-      respuesta = self.vector_(0)
-      return respuesta
-    else:
-      respuesta = ""
-      for i in range(self.shape[0]-1):
-        respuesta = respuesta + self.vector_(i) + "\n"
-      respuesta = respuesta + self.vector_(self.shape[0]-1)
-      return respuesta
-    
-  def vector_(self, fila):
-    respuesta = "|"
-    for i in range(self.shape[1]-1):
-      respuesta = respuesta + str(self.valores[fila][i])
-      respuesta = respuesta + " "
-    respuesta = respuesta + str(self.valores[fila][-1]) + "|"
-    return respuesta
+else:
+# Iniciamos la matriz con ceros
+    matriz = []
+    for i in range(filas):
+        fila = []
+        for j in range(columnas):
+            fila.append(0)
+        matriz.append(fila)
 
-  def __add__(self, otra):
-    if self.shape[0] == 1:
-      lista = []
-      for i in range(self.shape[1]):
-        lista.append(self.valores[0][i] + otra.valores[0][i])
-      respuesta = Matriz([lista])
-      return respuesta
-    elif self.shape != otra.shape:
-      print("Tamaños distintos. No es posible la suma")
-    else: 
-      respuesta = self.valores
-      for i in range(self.shape[0]):
-        for j in range(self.shape[1]):
-          respuesta[i][j] = self.valores[i][j] + otra.valores[i][j]
-      respuesta = Matriz(respuesta)
-      return respuesta
+# Se llena la matriz con los valores ingresados por el usuario
+    for i in range(filas):
+        for j in range(columnas):
+            valor = int(input("Ingrese el valor para la posición [{}, {}]: ".format(i, j)))
+            matriz[i][j] = valor
 
-  def __sub__(self, otra):
-    if self.shape[0] == 1:
-      lista = []
-      for i in range(self.shape[1]):
-        lista.append(self.valores[0][i] - otra.valores[0][i])
-      respuesta = Matriz([lista])
-      return respuesta
-    elif self.shape != otra.shape:
-      print("Tamaños distintos. No es posible la resta")
-    else: 
-      respuesta = self.valores
-      for i in range(self.shape[0]):
-        for j in range(self.shape[1]):
-          respuesta[i][j] = self.valores[i][j] - otra.valores[i][j]
-      respuesta = Matriz(respuesta)
-      return respuesta
+# Se muestra la matriz
+    print("La matriz ingresada es:")
+    for fila in matriz:
+        print(fila)
