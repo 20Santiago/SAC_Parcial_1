@@ -1,14 +1,17 @@
 # Primer parcial
 # Santiago Aguilar Cardenas
 
-#Comenzamos dandole dimensiones a la matriz dada por el usuario
+# Comenzamos dandole dimensiones a la matriz dada por el usuario.
 filas = int(input("Ingrese el número de filas: "))
 columnas = int(input("Ingrese el número de columnas: "))
+
+# Aplicamos un condicional para que el usuario sepa que debe de ser una matriz cuadrada.
 
 if filas != columnas:
         print("Lo sentimos, su matriz no es cuadrada. Este programa está prediseñado para matrices cuadradas.")
 else:
-    # Inicializar la matriz
+    
+# Iniciamos con la matriz.
         matriz = []
         for i in range(filas):
             fila = []
@@ -16,18 +19,18 @@ else:
                 fila.append(0)
             matriz.append(fila)
 
-    # Llenar la matriz con los valores ingresados por el usuario
+# Llenar la matriz con los valores ingresados por el usuario.
         for i in range(filas):
             for j in range(columnas):
                 valor = int(input("Ingrese el valor para la posición [{}, {}]: ".format(i, j)))
                 matriz[i][j] = valor
 
-    # Mostrar la matriz original
+# Mostramos la matriz original.
         print("La matriz ingresada es:")
         for fila in matriz:
             print(fila)
 
-     # Se calcula la matriz transpuesta
+# Se calcula la matriz transpuesta
         matriz_transpuesta = []
         for j in range(columnas):
             fila_transpuesta = []
@@ -40,7 +43,7 @@ else:
         for fila in matriz_transpuesta:
                 print(fila)
 
-    # Crear una matriz identidad del mismo tamaño que la matriz original
+# Se crea una matriz identidad del mismo tamaño que la matriz original
         identidad = []
         for i in range(filas):
             fila = []
@@ -51,13 +54,13 @@ else:
                     fila.append(0)
             identidad.append(fila)
 
-    # Concatenar la matriz original y la matriz identidad
+# Concatenar la matriz original y la matriz identidad
         matriz_extendida = []
         for i in range(filas):
             fila_extendida = matriz[i] + identidad[i]
             matriz_extendida.append(fila_extendida)
 
-    # Transformar la matriz extendida en una matriz escalonada reducida por fila
+# Transformar la matriz extendida en una matriz escalonada reducida por fila
         for i in range(filas):
             fila_pivote = matriz_extendida[i]
             pivote = fila_pivote[i]
@@ -76,13 +79,13 @@ else:
                             fila_a_eliminar[j] = fila_a_eliminar[j] - factor * fila_pivote[j]
                         matriz_extendida[k] = fila_a_eliminar
 
-    # Extraer la matriz inversa de la matriz extendida
+# Extraer la matriz inversa de la matriz extendida
         inversa = []
         for i in range(filas):
             fila_inversa = matriz_extendida[i][columnas:]
             inversa.append(fila_inversa)
 
-    # Mostrar la matriz inversa
+# Mostrar la matriz inversa
         print("La matriz inversa es:")
         for fila in inversa:
             print(fila)
