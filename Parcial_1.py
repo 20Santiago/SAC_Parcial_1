@@ -91,7 +91,7 @@ else:
             print(fila)
 
 # Calcular el determinante
-        determinante = 1
+        determinante = pivote
         for i in range(filas):
             fila_pivote = matriz_extendida[i]
             pivote = fila_pivote[i]
