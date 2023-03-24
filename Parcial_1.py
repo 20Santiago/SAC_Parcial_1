@@ -91,14 +91,14 @@ else:
             print(fila)
 
 # Calcular el determinante
-determinante = 1
-for i in range(filas):
-    fila_pivote = matriz_extendida[i]
-    pivote = fila_pivote[i]
-    determinante *= pivote
+        determinante = 1
+        for i in range(filas):
+            fila_pivote = matriz_extendida[i]
+            pivote = fila_pivote[i]
+            determinante *= pivote
 
 # Mostrar el determinante
-print("El determinante de la matriz es:", determinante)
+        print("El determinante de la matriz es:", determinante)
 
 
 
